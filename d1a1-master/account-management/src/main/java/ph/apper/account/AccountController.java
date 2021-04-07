@@ -2,6 +2,7 @@ package ph.apper.account;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,20 +14,22 @@ import org.springframework.web.client.RestTemplate;
 public class AccountController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
 
+    @Autowired
     private final RestTemplate restTemplate;
-
-
 
     public AccountController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
+
     @PostMapping
-    public ResponseEntity create(
+    public ResponseEntity register(
             @RequestBody ph.apper.account.AccountRequest request) {
 
 
+
         LOGGER.info("{}", request);
+
 
 
         Activity activity = new Activity();

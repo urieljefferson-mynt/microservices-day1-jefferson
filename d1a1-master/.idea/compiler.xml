@@ -10,7 +10,7 @@
         <module name="account-management" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="account-management" target="11" />
       <module name="activity" target="11" />
       <module name="d1a1" target="11" />
